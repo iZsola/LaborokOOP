@@ -28,4 +28,18 @@ public class Customer {
     {
         this.account=null;
     }
+
+    public String toString() {
+        StringBuffer result = new StringBuffer();
+        result.append(firstName + ' ' + lastName + ", account:\n");
+        if (this.account!=null)
+        {
+            result.append(this.account.toString());
+        }
+        else
+        {
+            result.append("NO ACCOUNT FOUND!");
+        }
+        return result.toString();
+    }
 }
