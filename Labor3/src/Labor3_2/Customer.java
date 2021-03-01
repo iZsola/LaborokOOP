@@ -12,7 +12,7 @@ public class Customer {
     private String firstName;
     private String lastName;
     private int numAccounts=0;
-    private List<BankAccount> accounts;
+    private BankAccount[] accounts;
     //endregion
 
     //region constructor
@@ -20,7 +20,7 @@ public class Customer {
     {
         this.firstName=fName;
         this.lastName=lName;
-        accounts=new ArrayList<BankAccount>();
+        accounts=new BankAccount[MAX_ACCOUNTS];
     }
     //endregion
 
@@ -37,8 +37,7 @@ public class Customer {
     {
         if (account!=null&&numAccounts<MAX_ACCOUNTS)
         {
-            numAccounts++;
-            this.accounts.add(account);
+            this.accounts[numAccounts++]=account;
         }
     }
 
@@ -52,16 +51,26 @@ public class Customer {
         return null;
     }
 
+    public BankAccount[] getAccounts()
+    {
+        BankAccount[] accs;
+        accs=new BankAccount[numAccounts];
+        for (int i=0;i<numAccounts;i++)
+        {
+            accs[i]=accounts[i];
+        }
+        return accs;
+    }
+
     public void closeAccount(String accountNumber)
     {
-        for (BankAccount b : accounts)
+        for (int i=0;i<numAccounts;i++)
         {
-           if (b.getAccountNumber().equals(accountNumber))
-           {
-               this.accounts.remove(b);
-               numAccounts--;
-               break;
-           }
+            if (this.accounts[i].getAccountNumber().equals(accountNumber))
+            {
+                this.accounts[i]=this.accounts[--numAccounts];
+                break;
+            }
         }
     }
 
@@ -69,7 +78,7 @@ public class Customer {
         StringBuffer result = new StringBuffer();
         result.append(firstName + ' ' + lastName + " accounts:\n");
         for(int i=0; i<numAccounts; ++i){
-            result.append( "\t" + accounts.get(i).toString() +"\n");
+            result.append( "\t" + accounts[i].toString() +"\n");
         }
         return result.toString();
     }
