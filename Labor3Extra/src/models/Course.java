@@ -68,4 +68,18 @@ public class Course {
         numberOfEnrolledStudents--;
     }
 
+    public String toString()
+    {
+        StringBuffer result = new StringBuffer();
+        result.append("Teacher: "+ this.teacher.toString());
+        result.append("Credits: " + this.numberOfCredits + "\n");
+        result.append("Occurs every: " + this.dayOfCourse + "\n");
+        result.append("Enrolled students: " + this.numberOfEnrolledStudents + "\n");
+        for (int i=0;i<numberOfEnrolledStudents;i++)
+        {
+            result.append("\t - " + enrolledStudents[i].toString());
+        }
+        return result.toString();
+    }
+
 }

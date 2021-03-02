@@ -9,7 +9,7 @@ public class Student {
     private String neptunCode;
     private Major major;
 
-    public Student(String lName, String fName, String code, Major m)
+    public Student(String code, String fName,String lName, Major m)
     {
         this.lastName=lName;
         this.firstName=fName;
@@ -39,5 +39,12 @@ public class Student {
 
     public void setMajor(Major major) {
         this.major = major;
+    }
+
+    public String toString()
+    {
+        StringBuffer result = new StringBuffer();
+        result.append(this.firstName + " " + this.lastName + " (" + this.neptunCode + ")\n");
+        return result.toString();
     }
 }

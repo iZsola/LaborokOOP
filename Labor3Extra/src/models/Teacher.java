@@ -11,7 +11,7 @@ public class Teacher {
     private Department department;
     private int teacherID;
 
-    public Teacher(String lName, String fName, Degree degree, Department department)
+    public Teacher(String fName, String lName, Degree degree, Department department)
     {
         this.lastName=lName;
         this.firstName=fName;
@@ -55,5 +55,12 @@ public class Teacher {
 
     public void setDepartment(Department department) {
         this.department = department;
+    }
+
+    public String toString()
+    {
+        StringBuffer result = new StringBuffer();
+        result.append(firstName + " " + lastName + " - " +this.degree + " from " + this.department + " department\n");
+        return result.toString();
     }
 }
