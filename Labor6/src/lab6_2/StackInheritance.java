@@ -26,13 +26,21 @@ public class StackInheritance extends ArrayList {
         if (this.size()<capacity)
         {
             this.add(o);
+            return;
         }
+
+        System.out.println("STACK IS FULL!\n");
     }
 
     public void pop()
     {
         if (!isEmpty())
+        {
             this.remove(this.size()-1);
+            return;
+        }
+
+        System.out.println("STACK IS EMPTY!\n");
     }
 
     public Object top()
@@ -47,7 +55,5 @@ public class StackInheritance extends ArrayList {
     {
         return this.size();
     }
-
-
 
 }

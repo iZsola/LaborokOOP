@@ -16,11 +16,13 @@ public class CheckingAccount extends BankAccount {
         this.overdraftLimit = overdraftLimit;
     }
 
-
     @Override
-    public boolean withdraw(double amount)
-    {
-        return super.withdraw(amount);
+    public boolean withdraw(double amount) {
+        if(balance - amount >= -(overdraftLimit)){
+            balance -= amount;
+            return true;
+        }
+        return false;
     }
 
     @Override
