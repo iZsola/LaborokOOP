@@ -54,7 +54,7 @@ public class Employee {
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", salary=" + salary +
-                ", birthDate=" + birthDate +
+                ", birthDate=" + birthDate.DateToString() +
                 '}';
     }
 }

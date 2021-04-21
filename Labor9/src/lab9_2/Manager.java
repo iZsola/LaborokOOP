@@ -28,7 +28,7 @@ public class Manager extends Employee {
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", salary=" + salary +
-                ", birthDate=" + birthDate +
+                ", birthDate=" + birthDate.DateToString() +
                 ", department='" + department + '\'' +
                 '}';
     }
