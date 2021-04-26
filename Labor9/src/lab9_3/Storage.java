@@ -12,7 +12,7 @@ public class Storage {
     public Storage(String fname)
     {
         products=new ArrayList<>();
-        String path="Labor9\\src\\" + fname;
+        String path="Labor9\\" + fname;
         try {
             File myObj = new File(path);
             Scanner myReader = new Scanner(myObj);
@@ -35,7 +35,7 @@ public class Storage {
 
     public void Update(String fname)
     {
-        String path="Labor9\\src\\" + fname;
+        String path="Labor9\\" + fname;
         try {
             File myObj = new File(path);
             Scanner myReader = new Scanner(myObj);

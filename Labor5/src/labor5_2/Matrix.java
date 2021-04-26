@@ -70,12 +70,11 @@ public class Matrix {
         }
     }
 
-    public static Matrix add(Matrix m1, Matrix m2)
+    public static Matrix add(Matrix m1, Matrix m2) throws MatrixException
     {
         if (m1.getRows()!=m2.getRows()||m1.getColumns()!=m2.getColumns())
         {
-            System.out.println("NOT EQUAL SIZED MATRIXES!\n");
-            return null;
+            throw new MatrixException("NOT EQUAL SIZED MATRIXES!\n");
         }
         Matrix res=new Matrix(m1.getRows(), m1.getColumns());
         for (int i=0;i<res.getRows();i++)
@@ -103,8 +102,12 @@ public class Matrix {
         return res;
     }
 
-    public static Matrix multiply(Matrix m1, Matrix m2)
+    public static Matrix multiply(Matrix m1, Matrix m2) throws MatrixException
     {
+        if (m1.getColumns()!=m2.getRows())
+        {
+            throw new MatrixException("Not adequate matrix sizes!\n");
+        }
         Matrix res= new Matrix(m1.getRows(), m2.getColumns());
         for (int i = 0; i < m1.data.length; i++)
         {

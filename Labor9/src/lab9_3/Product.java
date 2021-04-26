@@ -1,7 +1,4 @@
 package lab9_3;
-
-import lab9_2.Company;
-
 public class Product implements Comparable<Product> {
     private final int identifier;
     private int amount;

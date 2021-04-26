@@ -22,13 +22,26 @@ public class Main {
         System.out.println("m2: ");
         m2.printMatrix();
         System.out.println("Sum: m1 + m2");
-        Matrix.add(m1, m2).printMatrix();
+        try
+        {
+            Matrix.add(m1, m2).printMatrix();
+        } catch (MatrixException e)
+        {
+            e.printStackTrace();
+        }
         Matrix m3 = new Matrix(3, 4);
         m3.fillRandom(0, 1);
         System.out.println("m3: ");
         m3.printMatrix();
         System.out.println("Product: m1 * m3");
-        Matrix.multiply(m1, m3).printMatrix();
+        try
+        {
+            Matrix.multiply(m1, m3).printMatrix();
+        } catch (MatrixException e)
+        {
+            e.printStackTrace();
+        }
+
         System.out.println("Transpose(m3)");
         Matrix.transpose( m3 ).printMatrix();
     }

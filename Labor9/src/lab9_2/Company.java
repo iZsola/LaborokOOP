@@ -55,7 +55,7 @@ public class Company {
 
     public void hireAll(String fname)
     {
-        String path="Labor9\\src\\" + fname;
+        String path="Labor9\\" + fname;
         try
         {
             File myObj = new File(path);
