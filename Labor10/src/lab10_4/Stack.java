@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Stack {
     ArrayList<Object> items;
-    private int capacity;
+    private final int capacity;
 
     public Stack(int capacity)
     {

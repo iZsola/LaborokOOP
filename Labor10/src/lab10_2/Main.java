@@ -1,7 +1,6 @@
 package lab10_2;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.time.LocalDate;
@@ -60,7 +59,7 @@ public class Main {
 
     public static boolean isValid(final String date) {
 
-        boolean valid = false;
+        boolean valid;
 
         try {
 

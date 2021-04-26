@@ -3,7 +3,7 @@ package lab10_3;
 import java.io.*;
 
 public interface FileUtil {
-    public static void encode(String inputFileName, String outputFileName) throws IOException
+    static void encode(String inputFileName, String outputFileName) throws IOException
     {
         InputStream in = new FileInputStream(inputFileName );
         OutputStream out = new FileOutputStream(outputFileName);
@@ -15,7 +15,7 @@ public interface FileUtil {
         out.close();
     }
 
-    public static void decode(String inputFileName, String outputFileName) throws IOException
+    static void decode(String inputFileName, String outputFileName) throws IOException
     {
         InputStream in = new FileInputStream(inputFileName );
         OutputStream out = new FileOutputStream(outputFileName);

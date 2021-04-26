@@ -54,21 +54,17 @@ public interface IExpression {
                 }
             }
         }
-        double res=0;
         try{
-            res=(double)myStack.top();
+            return (double)myStack.top();
         }
         catch (StackException e)
         {
             throw new ExpressionException("Wrong postfix expression!");
         }
-        return res;
     }
 
     static boolean isOperator(String s)
     {
-        if (s.equals("/") || s.equals("*") || s.equals("+") || s.equals("-"))
-            return true;
-        return false;
+        return (s.equals("/") || s.equals("*") || s.equals("+") || s.equals("-"));
     }
 }
