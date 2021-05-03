@@ -7,14 +7,14 @@ public interface IExpression {
         Stack myStack=new Stack(100);
         for (String s : str)//Iterate through all inputs
         {
-            if (!(isOperator(s)))//If not operator
+            if (!(isOperator(s)))//If not operator(operand)
             {
                 try {
                     double i=Double.parseDouble(s);
                     myStack.push(i);
                 } catch (StackException e)
                 {
-                    throw new ExpressionException("Wrong postfix expression");
+                    throw new ExpressionException("This should never happen!");
                 }
                 catch (NumberFormatException e)
                 {
