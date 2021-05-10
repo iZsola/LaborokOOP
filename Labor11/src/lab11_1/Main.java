@@ -35,6 +35,5 @@ public class Main {
         t9.start();
         if (counter<=0)
             return;
-        //Nem teljesen ertem miert ilyen ossze-vissza a kimenet
     }
 }
